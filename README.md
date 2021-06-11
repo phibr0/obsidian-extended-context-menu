@@ -4,8 +4,6 @@ This Plugin adds a API to Obsidian, which enabled other Plugins to modify the (r
 
 ## How to integrate this into my Plugin
 
-### Registering Commands
-
 Create new Objects, using the following Schema:
 
 ```ts
@@ -49,6 +47,8 @@ Unfortunetly the `//@ts-ignore`'s are neccessary since Obsidian doesn't expose t
 //@ts-ignore
 this.app.plugins.getPlugin("extended-context-menu").unregisterCommand(menu);
 ```
+
+A working Example can also be seen in my [Obsidian-Dictionary](https://github.com/phibr0/obsidian-dictionary) Plugin [right here](https://github.com/phibr0/obsidian-dictionary/blob/df53bbe6a368e31187d242e5bbd1f278136e02f8/src/main.ts#L76).
 
 ## How to install
 
