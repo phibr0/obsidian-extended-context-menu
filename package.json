@@ -1,8 +1,7 @@
 {
-  "name": "obsidian-context-menus",
-  "version": "0.12.0",
-  "description": "This is a sample plugin for Obsidian (https://obsidian.md)",
-  "main": "main.js",
+  "name": "extended-context-menu",
+  "version": "0.1.0",
+  "description": "This Plugin adds a API for other Plugins to create better Custom Context Menus in Obsidians Editor.",
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",
     "build": "rollup --config rollup.config.js --environment BUILD:production"
