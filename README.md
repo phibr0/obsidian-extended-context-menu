@@ -32,8 +32,8 @@ Then register them like so:
 
 ```ts
 //@ts-ignore
-const menuPlugin = this.app.plugins.getPlugin("extended-context-menu");
 this.app.workspace.onLayoutReady(() => {
+    const menuPlugin = this.app.plugins.getPlugin("extended-context-menu");
     if(menuPlugin){
         //@ts-ignore
         menuPlugin.registerCommand(menu);
