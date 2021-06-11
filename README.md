@@ -1,6 +1,6 @@
 # Obsidian Extended Context Menu Plugin [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/phibr0/obsidian-extended-context-menu)](https://github.com/phibr0/obsidian-extended-context-menu/releases) ![GitHub all releases](https://img.shields.io/github/downloads/phibr0/obsidian-extended-context-menu/total)
 
-This Plugin adds a API to Obsidian, which enabled other Plugins to modify the (right-click) Editor Context Menu in a central Place, without overriding each others Menu. This will probably get removed when Obsidian provides its own API to do this.
+This Plugin adds a API to Obsidian, which enables other Plugins to modify the (right-click) Editor Context Menu in a central Place, without overriding each others Menu. **This will probably get removed when Obsidian provides its own API to do this.**
 
 ## How to integrate this into my Plugin
 
@@ -41,7 +41,7 @@ this.app.workspace.onLayoutReady(() => {
 });
 ```
 
-Unfortunetly the `//@ts-ignore`'s are neccessary since Obsidian doesn't expose the `.plugins` Property on `App`. You can of course register multiple Commands. You can disable already registered Commands by settings the `enabled` Property on the Entry Object to `false`, or you can use:
+Unfortunetly the `//@ts-ignore`'s are neccessary since Obsidian doesn't expose the `plugins` property on `App`. You can of course register multiple Commands. You can disable already registered Commands by settings the `enabled` Property on the Entry Object to `false`, or you can use:
 
 ```ts
 //@ts-ignore
