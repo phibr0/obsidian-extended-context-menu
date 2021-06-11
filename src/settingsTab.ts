@@ -1,13 +1,19 @@
 import { App, PluginSettingTab, Setting } from "obsidian";
 import ContextMenuPlugin from "./main";
 import { Entry } from "./types";
+import { getID } from "./util";
 
 export interface Settings {
-	state: Map<Entry, boolean>;
+	states: EntryState[]
+}
+
+interface EntryState {
+	id: string,
+	enabled: boolean,
 }
 
 export const DEFAULT_SETTINGS: Settings = {
-	state: new Map<Entry, boolean>(),
+	states: []
 }
 
 export class SettingsTab extends PluginSettingTab {
@@ -30,10 +36,11 @@ export class SettingsTab extends PluginSettingTab {
                 .setName(entry.name)
                 .setDesc(`Added by: ${entry.pluginName}. It is currently ${entry.enabled ? "enabled" : "disabled"} by the Plugin itself.`)
 				.addToggle((cb) => {
-					cb.setValue(this.plugin.settings.state.get(entry));
+					let state = this.plugin.settings.states.find((state) => state.id == getID(entry.pluginName, entry.name));
+					cb.setValue(state.enabled);
 					cb.setDisabled(!entry.enabled);
 					cb.onChange(async (value) => {
-						this.plugin.settings.state.set(entry, value);
+						state.enabled = value;
 						await this.plugin.saveSettings();
 					})
 				});

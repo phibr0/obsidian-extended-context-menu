@@ -1,6 +1,7 @@
 import { Menu, Plugin } from 'obsidian';
 import { Entry} from 'src/types';
 import { SettingsTab, Settings, DEFAULT_SETTINGS } from './settingsTab';
+import { getID } from './util';
 
 
 export default class ContextMenuPlugin extends Plugin {
@@ -45,7 +46,9 @@ export default class ContextMenuPlugin extends Plugin {
 			console.error("Extended Context Menu: Entry Object doesn't exist or is malformed.");
 		}
 		this.editorEntries.push(entry);
-		this.settings.state.set(entry, true);
+		if(!this.settings.states.contains(this.settings.states.find((state) => state.id == getID(entry.pluginName, entry.name)))){
+			this.settings.states.push({id: getID(entry.pluginName, entry.name), enabled: entry.enabled});
+		}
 		console.log(`%cSuccessfully registered ${entry.name} by ${entry.pluginName}`, "color: aquamarine");
 	}
 
@@ -64,7 +67,7 @@ export default class ContextMenuPlugin extends Plugin {
 			console.error('Cannot remove non existant Context Menu Command: ' + entry.name);
 		}
 		this.editorEntries.remove(entry);
-		this.settings.state.delete(entry);
+		this.settings.states.remove(this.settings.states.find((state) => state.id == getID(entry.pluginName, entry.name)))
 	}
 
 	private handleContextMenu(instance: CodeMirror.Editor, e: MouseEvent){
@@ -99,7 +102,7 @@ export default class ContextMenuPlugin extends Plugin {
 		menu.addSeparator();
 
 		this.editorEntries.forEach(entry => {
-			if(entry.enabled && this.settings.state.get(entry)){
+			if(entry.enabled && this.settings.states.find((state) => state.id == getID(entry.pluginName, entry.name)).enabled){
 				menu.addItem((item) => {
 					item.setTitle(entry.name)
 						.setIcon(entry.icon)
