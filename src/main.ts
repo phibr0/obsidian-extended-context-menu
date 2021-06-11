@@ -24,7 +24,7 @@ export default class ContextMenuPlugin extends Plugin {
 	onunload(): void {
 		this.app.workspace.iterateCodeMirrors((cm) => {
 			cm.off("contextmenu", this.handleContextMenu);
-		  });
+		});
 	}
 
 	async loadSettings() {
