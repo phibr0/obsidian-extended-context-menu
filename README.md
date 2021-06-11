@@ -31,8 +31,8 @@ const menu = {
 Then register them like so:
 
 ```ts
-//@ts-ignore
 this.app.workspace.onLayoutReady(() => {
+    //@ts-ignore
     const menuPlugin = this.app.plugins.getPlugin("extended-context-menu");
     if(menuPlugin){
         //@ts-ignore
