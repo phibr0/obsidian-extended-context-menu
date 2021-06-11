@@ -50,7 +50,10 @@ this.app.plugins.getPlugin("extended-context-menu").unregisterCommand(menu);
 
 Please remember to unload the Context Menus using this Method when unloading your Plugin.
 
-A working Example can also be seen in my [Obsidian-Dictionary](https://github.com/phibr0/obsidian-dictionary) Plugin [right here](https://github.com/phibr0/obsidian-dictionary/blob/df53bbe6a368e31187d242e5bbd1f278136e02f8/src/main.ts#L76).
+### Extras
+
+- A working Example can also be seen in my [Obsidian-Dictionary](https://github.com/phibr0/obsidian-dictionary) Plugin [right here](https://github.com/phibr0/obsidian-dictionary/blob/df53bbe6a368e31187d242e5bbd1f278136e02f8/src/main.ts#L76).
+- You can use @pjeby's [Hotkey Helper URI](https://github.com/pjeby/hotkey-helper#plugin-urls) to open the Plugin's Download Page automatically
 
 ## How to install
 
