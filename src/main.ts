@@ -13,9 +13,7 @@ export default class ContextMenuPlugin extends Plugin {
 		await this.loadSettings();
 
 		this.registerCodeMirror(cm => {
-            cm.on('contextmenu', (instance, e) => {
-                this.handleContextMenu(instance, e);
-            });
+            cm.on('contextmenu', this.handleContextMenu);
         });
 
 		this.addSettingTab(new SettingsTab(this.app, this));
@@ -70,7 +68,7 @@ export default class ContextMenuPlugin extends Plugin {
 		this.settings.states.remove(this.settings.states.find((state) => state.id == getID(entry.pluginName, entry.name)))
 	}
 
-	private handleContextMenu(instance: CodeMirror.Editor, e: MouseEvent){
+	private handleContextMenu = (instance: CodeMirror.Editor, e: MouseEvent) => {
 		e.preventDefault();
 
 		const menu = new Menu(this.app);
