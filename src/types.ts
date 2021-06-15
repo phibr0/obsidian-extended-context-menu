@@ -1,4 +1,4 @@
-export interface Entry{
+export interface Entry {
     pluginName: string;
     name: string;
     icon: string;

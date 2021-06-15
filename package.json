@@ -4,7 +4,8 @@
   "description": "This Plugin adds a API for other Plugins to create better Custom Context Menus in Obsidians Editor.",
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",
-    "build": "rollup --config rollup.config.js --environment BUILD:production"
+    "build": "rollup --config rollup.config.js --environment BUILD:production",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,9 @@
     "obsidian": "^0.12.0",
     "rollup": "^2.32.1",
     "tslib": "^2.2.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0"
   }
 }
