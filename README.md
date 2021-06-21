@@ -1,3 +1,5 @@
+# **This is already deprecated: https://forum.obsidian.md/t/obsidian-release-v0-12-6-insider-build/19914**
+
 # Obsidian Extended Context Menu Plugin [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/phibr0/obsidian-extended-context-menu)](https://github.com/phibr0/obsidian-extended-context-menu/releases) ![GitHub all releases](https://img.shields.io/github/downloads/phibr0/obsidian-extended-context-menu/total)
 
 This Plugin adds a API to Obsidian, which enables other Plugins to modify the (right-click) Editor Context Menu in a central Place, without overriding each others Menu. **This will probably get removed when Obsidian provides its own API to do this.**
